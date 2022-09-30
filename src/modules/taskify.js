@@ -1,17 +1,19 @@
 const presumedTask = [
   {
-    description: "Wash the dishes",
+    description: 'Wash the dishes',
     completed: false,
-    index: 0
+    index: 0,
   },
   {
-    description: "Complete To Do List project",
+    description: 'Complete To Do List project',
     completed: false,
-    index: 1
+    index: 1,
   },
 ];
 
-let sortIndex = presumedTask.sort((a,b) => a.index > b.index ? [a, b] : [b,a]);
+const sortIndex = presumedTask.sort((a,b) => {
+  a.index > b.index ? [a, b] : [b, a];
+});
 
 const pop = (plan) => {
   document.querySelector('.task-list').innerHTML += `
@@ -21,8 +23,7 @@ const pop = (plan) => {
       <label for="new">${plan.description} </label>
       <i class="fa fa-ellipsis-vertical"></i>
     </div>
-  </li>
-  `;
+  </li>`;
 }
 
 // Get book from storage or preinstalled array array
@@ -30,7 +31,7 @@ class Recorder {
   static checkStorage = () => {
     let task;
     if (presumedTask.length !== 0) {
-        task = sortIndex.map(pop).join('');
+      task = sortIndex.map(pop).join('');
     }
     return task;
   }

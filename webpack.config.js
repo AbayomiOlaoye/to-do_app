@@ -30,7 +30,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
+          'sass-loader',
         ],
       },
       {
@@ -39,14 +39,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
           },
         },
       },
       {
         test: /\.(png|jpg|jpeg|svg|gif)$/i,
-        type: 'asset/resource'
-      }
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
@@ -56,4 +56,4 @@ module.exports = {
       template: 'src/template.html',
     }),
   ],
-}
+};
