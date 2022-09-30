@@ -11,9 +11,8 @@ const presumedTask = [
   },
 ];
 
-const sortIndex = presumedTask.sort((a,b) => {
-  a.index > b.index ? [a, b] : [b, a];
-});
+/* eslint-disable */
+const sortIndex = presumedTask.sort((a,b) => a.index > b.index ? [a, b] : [b, a]);
 
 const pop = (plan) => {
   document.querySelector('.task-list').innerHTML += `
@@ -24,14 +23,14 @@ const pop = (plan) => {
       <i class="fa fa-ellipsis-vertical"></i>
     </div>
   </li>`;
-}
+};
 
 // Get book from storage or preinstalled array array
 class Recorder {
   static checkStorage = () => {
     let task;
     if (presumedTask.length !== 0) {
-      task = sortIndex.map(pop).join('');
+        task = sortIndex.map(pop).join('');
     }
     return task;
   }
