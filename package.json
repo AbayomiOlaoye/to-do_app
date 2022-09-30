@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "start": "webpack serve --open"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
