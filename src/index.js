@@ -1,3 +1,5 @@
 import './styles/main.scss';
+import Recorder from './modules/taskify.js'
 
-console.log("Hey man!");
+// Get array and populate DOM
+document.addEventListener('DOMContentLoaded', Recorder.checkStorage);

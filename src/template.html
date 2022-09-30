@@ -17,26 +17,28 @@
     </header>
     <section class="dock">
       <div class="container">
-        <div class="lead">
-          <h1>Got plans to accomplish anything today?</h1>
-          <i class="fa-solid fa-arrows-rotate"></i>
-        </div>
-        <div class="main-cta">
-          <!-- Form for user's input -->
-          <form action="#" method="#" class="app">
-            <input type="text" name="task" id="task" placeholder="Add to your list..." required>
-            <i class="fa fa-arrow-turn-down"></i>
-          </form>
+        <div class="grp-tab">
 
-          <div class="ads">
-            <p class="copy">An app that helps you achieve more even when you don't have time!</p>
-            <button type="button">Try it today</button>
+          <div class="lead">
+            <h1>Today's To-Do</h1>
+            <i class="fa-solid fa-arrows-rotate"></i>
           </div>
-        </div>
+          <div class="main-cta">
 
-        <ul class="to-do">
-          <!-- Dynamic Content -->
-        </ul>
+            <!-- Form for user's input -->
+            <form action="#" method="#" class="app">
+              <div class="bind-icon">
+                <input type="text" name="task" class="task" placeholder="Add to your list..." required>
+                <i class="fa fa-arrow-turn-down"></i>
+              </div>
+            </form>
+
+            <ul class="task-list">
+              <!-- Dynamic Tasks -->
+            </ul>
+            <button type="button">Clear all completed</button>
+          </div>
+        </div> 
       </div>
     </section>
 
