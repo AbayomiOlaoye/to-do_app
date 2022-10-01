@@ -1,6 +1,7 @@
-import listItems from './taskify';
+/* eslint-disable */
+import listItems from './taskify.js';
 
-let list = JSON.parse(localStorage.getItem('list')) || [];
+const list = JSON.parse(localStorage.getItem('list')) || [];
 
 class SaveItem {
   constructor(description, completed = false, index) {

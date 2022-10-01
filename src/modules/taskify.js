@@ -1,4 +1,5 @@
-import { list, SaveItem } from './newTask';
+/* eslint-disable */
+import { SaveItem } from './newTask.js';
 
 const listItems = (listItem, id) => {
   const toDoList = document.querySelector('.to-do-list');

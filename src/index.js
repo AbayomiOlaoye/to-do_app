@@ -1,7 +1,7 @@
 import './styles/sub.css';
 
-import listItems from './modules/taskify';
-import { list, SaveItem } from './modules/newTask';
+import listItems from './modules/taskify.js';
+import { list, SaveItem } from './modules/newTask.js';
 
 const form = document.querySelector('#add-form');
 const toDoList = document.querySelector('.to-do-list');
