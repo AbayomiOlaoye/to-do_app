@@ -11,36 +11,33 @@
     />
   </head>
   <body>
-    <header class="head">
-      <div class="logo">To-<span>Do</span> App</div>
-      <p class="logo-text">Where thinking gets done!</p>
-    </header>
-    <section class="dock">
-      <div class="container">
-        <div class="grp-tab">
+    <main>
+      <section id="todoList-section">
+        <!-- header -->
+        <header class="head">
+          <h1>Today's To do</h1>
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </header>
 
-          <div class="lead">
-            <h1>Today's To-Do</h1>
-            <i class="fa-solid fa-arrows-rotate"></i>
-          </div>
-          <div class="main-cta">
+        <!-- Add to your list  -->
+        <form action="#" id="add-form">
+          <input
+            type="text"
+            id="add-item"
+            name="add-item"
+            placeholder="Add to your list..."
+          /><i class="fa fa-arrow-turn-down"></i>
+        </form>
 
-            <!-- Form for user's input -->
-            <form action="#" method="#" class="app">
-              <div class="bind-icon">
-                <input type="text" name="task" class="task" placeholder="Add to your list..." required>
-                <i class="fa fa-arrow-turn-down"></i>
-              </div>
-            </form>
+        <!-- list items -->
+        <ul class="to-do-list"></ul>
 
-            <ul class="task-list">
-              <!-- Dynamic Tasks -->
-            </ul>
-            <button type="button">Clear all completed</button>
-          </div>
-        </div> 
-      </div>
-    </section>
+        <!-- clear completed button -->
+        <div id="btn">
+          <button type="button" id="clear-btn">clear all completed</button>
+        </div>
+      </section>
+    </main>
 
   </body>
 </html>

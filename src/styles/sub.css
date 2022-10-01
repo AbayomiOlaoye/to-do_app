@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Fresca&family=Patrick+Hand&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  width: 100%;
+  background-color: bisque;
+}
+
+.fa-arrow-turn-down {
+  transform: rotate(90deg);
+}
+
+i {
+  font-size: 16px;
+  color: #9c9c9c;
+}
+
+i:hover {
+  color: #000;
+}
+
+input[type="text"] {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  color: bisque;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: sans-serif;
+}
+
+/* section style starts */
+#todoList-section {
+  max-width: 500px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.87);
+  box-shadow: 2px 2px 5px 0 rgba(124, 117, 117, 0.54);
+}
+
+/* header */
+.head {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 13px;
+  border-bottom: 2px solid #f09db6;
+  color: #636060;
+}
+
+/* Add to your list */
+#add-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 13px;
+  border-bottom: 2px solid #f09db6;
+}
+
+form #add-item {
+  font-style: italic;
+  font-size: 15px;
+  color: #7a7575;
+}
+
+/* list items */
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  padding: 15px 13px;
+  border-bottom: 2px solid #f09db6;
+}
+
+.to-do-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.check-list {
+  margin-right: 15px;
+}
+
+/* clear completed button */
+#btn {
+  padding: 15px 13px;
+  text-align: center;
+  background: #f09db6;
+}
+
+#btn #clear-btn {
+  color: #4b4848;
+  font-size: 16px;
+}
+
+#btn #clear-btn:hover {
+  color: #fff;
+}

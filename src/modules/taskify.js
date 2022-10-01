@@ -1,22 +1,23 @@
-const to_Do = (plan, id) => {
-  const tasks = document.querySelector('.task-list');
+import { list, SaveItem } from './newTask';
+
+const listItems = (listItem, id) => {
+  const toDoList = document.querySelector('.to-do-list');
   const li = document.createElement('li');
-  tasks.appendChild(li);
+  toDoList.appendChild(li);
   const div = document.createElement('div');
-  div.classList.add('flex-grp');
+  div.classList.add('list-container');
   li.appendChild(div);
 
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
-  checkbox.classList.add('check');
+  checkbox.classList.add('check-list');
   div.appendChild(checkbox);
 
-  const task = document.createElement('input');
-  task.setAttribute('type', 'text');
-  task.classList = 'new';
-  task.setAttribute('placeholder', plan.description);
-  task.setAttribute('disabled', '');
-  div.appendChild(task);
+  const text = document.createElement('input');
+  text.setAttribute('type', 'text');
+  text.setAttribute('placeholder', listItem.description);
+  text.setAttribute('disabled', '');
+  div.appendChild(text);
 
   const button = document.createElement('button');
   button.setAttribute('type', 'button');
@@ -24,42 +25,42 @@ const to_Do = (plan, id) => {
     <i class="fa fa-ellipsis-vertical"></i>`;
 
   button.addEventListener('click', (event) => {
-    const pop = event.target.parentNode.parentNode;
-    pop.querySelector('.fa-trash-can').parentNode.style.display = 'block';
+    const itemParent = event.target.parentNode.parentNode;
+    itemParent.querySelector('.fa-trash-can').parentNode.style.display = 'block';
     button.style.display = 'none';
-    li.style.background = '#fff';
-    //To edit
-    task.disabled = false;
-    task.focus();
+    li.style.background = '#f7cee9';
+    // to edit text
+    text.disabled = false;
+    text.focus();
   });
   li.appendChild(button);
 
   // delete button
-  const delBtn = document.createElement('button');
-  delBtn.setAttribute('type', 'button');
-  delBtn.innerHTML = `
-    <i class='fa fa-trash-can'></i>`;
-  delBtn.style.display = 'none';
+  const deleteButton = document.createElement('button');
+  deleteButton.setAttribute('type', 'button');
+  deleteButton.innerHTML = `
+    <i class='fa-solid fa-trash-can'></i>`;
+  deleteButton.style.display = 'none';
 
-  delBtn.id = id;
-  delBtn.addEventListener('click', (event) => {
-    const del = new SaveItem();
-    del.removeElem(id);
+  deleteButton.id = id;
+  deleteButton.addEventListener('click', (event) => {
+    const deleteItem = new SaveItem();
+    deleteItem.removeItem(id);
   });
-  li.appendChild(delBtn);
+  li.appendChild(deleteButton);
 
   // edit text Item
-  task.addEventListener('keypress', (event) => {
+  text.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
-      task.placeholder = task.value;
+      text.placeholder = text.value;
       button.style.display = 'flex';
-      delBtn.style.display = 'none';
-      task.disabled = true;
+      deleteButton.style.display = 'none';
+      text.disabled = true;
       li.style.background = 'none';
-      const TASK = new NewTask();
-      TASK.editTask(id, task.value);
+      const Item = new SaveItem();
+      Item.editItem(id, text.value);
     }
   });
 };
 
-export default to_Do;
+export default listItems;

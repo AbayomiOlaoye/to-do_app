@@ -1,58 +1,59 @@
-import to_Do from "./taskify";
+import listItems from './taskify';
 
-let presumedTask = JSON.parse(localStorage.getItem('to-Dos')) || [];
+let list = JSON.parse(localStorage.getItem('list')) || [];
 
-class NewTask {
-  constructor(description, completed = false, index = presumedTask.length + 1) {
+class SaveItem {
+  constructor(description, completed = false, index) {
     this.description = description;
     this.completed = completed;
     this.index = index;
   }
 
   // add new Item
-  addNew(plan) {
-    const tasks = presumedTask;
-    tasks.push(plan);
-    localStorage.setItem('to-Dos', JSON.stringify(tasks));
-    to_Do(this, presumedTask.length + 1);
+  addNew(newTodo) {
+    this.description = newTodo;
+    this.index = list.length + 1;
+    list.push({ description: this.description, completed: this.completed, index: this.index });
+    localStorage.setItem('list', JSON.stringify(list));
+    listItems(this, list.length + 1);
   }
 
   // remove Item
-  removeElem(index) {
-    sortTask = sortTask.filter((item) => item.index !== index);
-    localStorage.setItem('to-Dos', JSON.stringify(sortTask));
-    const taskList = document.querySelector('.task-list');
-    taskList.innerHTML = '';
+  removeItem(index) {
+    list = list.filter((element) => element.index !== index);
+    localStorage.setItem('list', JSON.stringify(list));
+    const toDoList = document.querySelector('.to-do-list');
+    toDoList.innerHTML = '';
     this.updateIndex();
-    this.showTask();
+    this.displaytodos();
   }
 
   // display items after delete
-  showTask = () => {
-    presumedTask.forEach((task, index) => {
-      to_Do(task, index + 1);
+  displaytodos = () => {
+    list.forEach((listObj, index) => {
+      listItems(listObj, index + 1);
     });
-    localStorage.setItem('to-Dos', JSON.stringify(presumedTask));
+    localStorage.setItem('list', JSON.stringify(list));
   }
 
   // update Index
   updateIndex = () => {
-    presumedTask = presumedTask.map((element, index) => {
+    list = list.map((element, index) => {
       element.index = index + 1;
       return element;
     });
-    localStorage.setItem('list', JSON.stringify(presumedTask));
+    localStorage.setItem('list', JSON.stringify(list));
   }
 
   // edit text Item
-  editTask = (id, text) => {
-    presumedTask.forEach((element) => {
+  editItem = (id, text) => {
+    list.forEach((element) => {
       if (element.index === id) {
         element.description = text;
       }
     });
-    localStorage.setItem('to-Dos', JSON.stringify(presumedTask));
+    localStorage.setItem('list', JSON.stringify(list));
   }
 }
 
-export { presumedTask, NewTask, taskList };
+export { list, SaveItem };
