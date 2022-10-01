@@ -57,7 +57,7 @@ const to_Do = (plan, id) => {
       task.disabled = true;
       li.style.background = 'none';
       const TASK = new NewTask();
-      TASK.editItem(id, task.value);
+      TASK.editTask(id, task.value);
     }
   });
 };

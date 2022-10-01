@@ -55,4 +55,4 @@ class NewTask {
   }
 }
 
-export { presumedTask, NewTask };
+export { presumedTask, NewTask, taskList };
