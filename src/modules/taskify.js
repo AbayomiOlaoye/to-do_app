@@ -30,4 +30,4 @@ class Recorder {
   }
 }
 
-export { Recorder, presumedTask, pop} ;
+export { Recorder, presumedTask, pop } ;

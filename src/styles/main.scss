@@ -135,7 +135,22 @@ body {
             .flex-grp {
               display: flex;
               justify-content: space-between;
+              align-items: center;
               width: 100%;
+
+              .new {
+                height: 50px;
+                padding: 0.5rem;
+                width: 100%;
+                margin-right: 0.5rem;
+                border: none;
+                outline: none;
+                background-color: rgba(255, 228, 196, 0.1);
+              }
+            }
+
+            .trash {
+              display: none;
             }
           }
         }
