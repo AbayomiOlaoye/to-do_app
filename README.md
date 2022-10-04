@@ -11,18 +11,14 @@ To-Do App is a tool that helps to organize your day. It simply lists the things 
 ## Getting Started
 > Clone this repository
 
-- $ git clone git@github.com:Favourezeugwa/TO-DO-LIST.git
-- $ cd TO-DO-LIST
+- $ git clone git@github.com:AbayomiOlaoye/to-do_app.git
+- $ cd to-do_app
 
 ## Run project
 
 - $ npm install
 - $ npm run build
 - $ npm run start # this will enable webpack to watch for your changes in code
-
-- Open page in browser
-
-- $ open dist/index.html
 
 ## Author
 
