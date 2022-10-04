@@ -1,15 +1,4 @@
-const presumedTask = [
-  {
-    description: 'Wash the dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Complete To Do List project',
-    completed: false,
-    index: 1,
-  },
-];
+const presumedTask = JSON.parse(localStorage.getItem('tasks')) || [];
 
 /* eslint-disable */
 const sortIndex = presumedTask.sort((a,b) => a.index > b.index ? [a, b] : [b, a]);
@@ -17,11 +6,12 @@ const sortIndex = presumedTask.sort((a,b) => a.index > b.index ? [a, b] : [b, a]
 const pop = (plan) => {
   document.querySelector('.task-list').innerHTML += `
   <li class="task">
-    <input type="checkbox" name="new">
+    <input type="checkbox">
     <div class="flex-grp">
-      <label for="new">${plan.description} </label>
+      <input class="new" value="${plan.description}">
       <i class="fa fa-ellipsis-vertical"></i>
     </div>
+      <i class="fa fa-trash-can trash"></i>
   </li>`;
 };
 
@@ -34,6 +24,10 @@ class Recorder {
     }
     return task;
   }
+
+  static updateStorage = () => {
+    const tasks = presumedTask
+  }
 }
 
-export default Recorder;
+export { Recorder, presumedTask, pop} ;

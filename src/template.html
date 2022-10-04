@@ -28,15 +28,17 @@
             <!-- Form for user's input -->
             <form action="#" method="#" class="app">
               <div class="bind-icon">
-                <input type="text" name="task" class="task" placeholder="Add to your list..." required>
-                <i class="fa fa-arrow-turn-down"></i>
+                <input type="text" class="task addUp" placeholder="Add to your list..." required>
+                <button type="submit">
+                  <i class="fa fa-arrow-turn-down"></i>
+                </button> 
               </div>
             </form>
 
             <ul class="task-list">
               <!-- Dynamic Tasks -->
             </ul>
-            <button type="button">Clear all completed</button>
+            <button type="button" class="clear">Clear all completed</button>
           </div>
         </div> 
       </div>

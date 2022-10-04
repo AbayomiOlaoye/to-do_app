@@ -11,6 +11,11 @@ $norm: sans-serif, monospace;
   ul {
     list-style-type: none;
   }
+
+  i,
+  button {
+    cursor: pointer;
+  }
 }
 
 body {
@@ -135,13 +140,10 @@ body {
           }
         }
 
-        button {
+        .clear {
+          margin-top: -16px;
           width: 100%;
           height: 60px;
-        }
-
-        button[type="button"] {
-          margin-top: -16px;
         }
       }
     }
