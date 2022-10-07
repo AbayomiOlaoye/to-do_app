@@ -7,11 +7,15 @@ To-Do App is a tool that helps to organize your day. It simply lists the things 
   - JavaScript(ES6)
   - HTML
   - CSS
+ 
+## Live link
+Here is the link to the deployed version of the app:
+Click on this &#128640; [link](https://abayomiolaoye.github.io/to-do_app/dist/)
 
 ## Getting Started
 > Clone this repository
 
-- $ git clone git@github.com:AbayomiOlaoye/to-do_app.git
+- $ git clone [here](https://www.github.com/AbayomiOlaoye/to-do_app)
 - $ cd to-do_app
 
 ## Run project
