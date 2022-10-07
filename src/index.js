@@ -1,19 +1,37 @@
 import './styles/main.scss';
-import { Recorder, presumedTask, pop } from './modules/taskify.js';
-import { NewTask } from './modules/newTask.js';
+import ToDoList from './modules/to-do-list.js';
+import {
+  populateAll, removeAllCompleted, showPopup, swing, drop,
+} from './modules/html_functions.js';
+import './assets/images/refresh.png';
+import './assets/images/add.png';
+import './assets/images/more.png';
+import './assets/images/delete.png';
+import './assets/images/clipboard.png';
+import './assets/images/accept.png';
 
-const addUp = document.querySelector('.addUp');
-const form = document.querySelector('form');
+const toDoList = new ToDoList();
 
-// Get array and populate DOM
-document.addEventListener('DOMContentLoaded', Recorder.checkStorage);
+populateAll(toDoList);
 
-// Get new tasks
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const enlist = new NewTask(addUp.value);
-  presumedTask.push(enlist);
-  pop(enlist);
-  localStorage.setItem('tasks', JSON.stringify(presumedTask));
-  form.reset();
-})
+const addNewTaskForm = document.getElementById('add-new-task');
+addNewTaskForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  toDoList.addNewTask(addNewTaskForm.elements.new_task.value);
+  addNewTaskForm.elements.new_task.value = '';
+});
+
+document.getElementById('clear-completed-button').addEventListener('click', () => {
+  if (removeAllCompleted(toDoList) === false) {
+    showPopup('Nothing to Remove');
+  }
+});
+
+const refreshButton = document.getElementById('refresh-button');
+refreshButton.addEventListener('click', () => {
+  swing();
+});
+
+document.querySelector('.clipboard img').addEventListener('click', () => {
+  drop();
+});
