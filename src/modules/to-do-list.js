@@ -37,7 +37,7 @@ export default class ToDoList {
     const task = {
       description: newTask,
       completed: false,
-      index: this.tasks.length + 1,
+      index: this.tasks.length,
     };
 
     if (this.taskExists(task.description)) {
