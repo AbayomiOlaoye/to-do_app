@@ -1,5 +1,4 @@
 export default function storageAvailable(type) {
-
   // Check if Storage is available - Type is String
   let storage;
   try {
