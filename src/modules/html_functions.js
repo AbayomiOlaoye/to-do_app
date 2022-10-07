@@ -27,7 +27,7 @@ export const showPopup = (error) => {
   setTimeout(() => {
     toDoContainer.classList.add('animate__shakeX');
   }, 10);
-}
+};
 
 export const drop = () => {
   toDoContainer.classList.remove('animate__shakeX');

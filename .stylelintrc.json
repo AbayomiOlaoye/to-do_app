@@ -1,23 +1,7 @@
 {
-  "extends": ["stylelint-config-standard"],
+  "extends": ["stylelint-config-recommended-scss"],
   "plugins": ["stylelint-scss", "stylelint-csstree-validator"],
-  "rules": {
-    "no-descending-specificity": null,
-    "at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
-      }
-    ],
-    "scss/at-rule-no-unknown":  [
-      true,
-      {
-        "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
-      }
-    ],
-    "csstree/validator": true,
-    "scss/selector-no-redundant-nesting-selector": true
-  },
+  "rules": {},
   "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "**/*.js", "**/*.jsx"],
   "editor.codeActionsOnSave": {
     "source.fixAll": true
