@@ -44,6 +44,6 @@ Give a ⭐️ if you like this project!
   - Inspiration
   - Microverse student community
 
-📝 ## License
+## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
