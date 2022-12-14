@@ -16,12 +16,10 @@ export default class ToDoList {
 
   taskExists = (description, skipIndex) => {
     for (let i = 0; i < this.tasks.length; i += 1) {
-      if (i === skipIndex) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-      if (this.tasks[i].description === description) {
-        return true;
+      if (i !== skipIndex) {
+        if (this.tasks[i].description === description) {
+          return true;
+        }
       }
     }
     return false;

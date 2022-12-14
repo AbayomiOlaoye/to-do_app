@@ -273,13 +273,10 @@ var ToDoList = /*#__PURE__*/_createClass(function ToDoList() {
 
   _defineProperty(this, "taskExists", function (description, skipIndex) {
     for (var i = 0; i < _this.tasks.length; i += 1) {
-      if (i === skipIndex) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (_this.tasks[i].description === description) {
-        return true;
+      if (i !== skipIndex) {
+        if (_this.tasks[i].description === description) {
+          return true;
+        }
       }
     }
 
@@ -1098,4 +1095,4 @@ document.querySelector('.clipboard img').addEventListener('click', function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlea89fb6acaf1cb4690b11.js.map
+//# sourceMappingURL=bundlee3db6920669d7e6dffa3.js.map
